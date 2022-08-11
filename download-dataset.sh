@@ -45,6 +45,14 @@ download_check_and_extract() {
   if [[ "$md5_1" != "" && "$md5_1" = "$md5_2" ]]; then
     tar -xf ./$images_file_name
     echo "$images_file_name extracted!"
+    #resize images
+    echo "resizing images from $images_file_name ..."
+    for filename in $(tar tf ./$images_file_name); do
+      convert $filename -resize 384x384! $filename
+    done
+    echo "images from $images_file_name resized to 384x384!"
+    rm ./$images_file_name
+	  rm ./$images_md5
   else
     echo "MD5 checksum for $images_file_name did not match checksum in $images_md5_file_name"
   fi
