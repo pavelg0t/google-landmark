@@ -52,7 +52,7 @@ download_check_and_extract() {
     done
     echo "images from $images_file_name resized to 384x384!"
     rm ./$images_file_name
-	  rm ./$images_md5
+    rm ./$images_md5_file_name
   else
     echo "MD5 checksum for $images_file_name did not match checksum in $images_md5_file_name"
   fi
