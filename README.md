@@ -100,6 +100,13 @@ directory.
 Note: This script downloads files in parallel. To adjust the number of parallel
 downloads, modify `NUM_PROC` in the script.
 
+#### Dependencies!!!
+The image resize step depends on the `imagemagick` package.
+Install it by
+```bash
+sudo apt install imagemagick
+```
+
 ### `train` image licenses
 
 All images in the `train` set have CC-BY licenses without the NonDerivs (ND)
